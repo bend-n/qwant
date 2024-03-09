@@ -1,8 +1,12 @@
 [package]
-name = "color_quant"
+edition = "2021"
+name = "qwant"
 license = "MIT"
-version = "1.1.0"
+version = "1.0.0"
 authors = ["nwin <nwin@users.noreply.github.com>"]
 readme = "README.md"
-description = "Color quantization library to reduce n colors to 256 colors."
-repository = "https://github.com/image-rs/color_quant.git"
+description = "Color qwantization library to reduce n colors to 256 colors."
+repository = "https://github.com/bend-n/qwant"
+
+[dependencies]
+atools = "0.1.1"

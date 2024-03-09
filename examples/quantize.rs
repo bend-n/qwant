@@ -1,8 +1,7 @@
-#![feature(array_chunks)]
+#![feature(array_chunks, slice_as_chunks)]
+extern crate qwant;
 
-extern crate color_quant;
-
-use color_quant::NeuQuant;
+use qwant::NeuQuant;
 use std::fs::write;
 
 fn main() {
@@ -45,7 +44,7 @@ fn main() {
         .copied()
         .collect::<Vec<u8>>();
     write("img.ppm", raw).expect("Failed to write");
-    let nq = NeuQuant::new(10, 256, &pixels);
+    let nq = NeuQuant::new(10, 256, unsafe { pixels.as_chunks_unchecked() });
 
     let quantized = &header
         .into_iter()
@@ -55,7 +54,7 @@ fn main() {
                 .array_chunks::<4>()
                 .map(|&[r, g, b, a]| {
                     let mut color = [r, g, b, a];
-                    nq.map_pixel(&mut color[..]);
+                    nq.map_pixel(&mut color);
                     let [r, g, b, _a] = color;
                     [r, g, b]
                 })
