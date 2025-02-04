@@ -2,7 +2,7 @@
 edition = "2021"
 name = "qwant"
 license = "MIT"
-version = "1.0.0"
+version = "1.0.1"
 authors = ["nwin <nwin@users.noreply.github.com>"]
 readme = "README.md"
 description = "Color qwantization library to reduce n colors to 256 colors."

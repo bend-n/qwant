@@ -63,11 +63,14 @@ that this copyright notice remain intact.
 //! ## Usage
 //!
 //! ```
+//! # #![feature(generic_const_exprs)]
 //! let data = vec![[0; 4]; 10];
 //! let nq = qwant::NeuQuant::new(10, 256, &data);
 //! let indixes: Vec<u8> = data.iter().map(|&pix| nq.index_of(pix) as u8).collect();
 //! let color_map: Vec<[u8; 4]> = nq.take_color_map();
 //! ```
+#![allow(incomplete_features)]
+#![feature(generic_const_exprs)]
 use atools::prelude::*;
 use std::cmp::{max, min};
 const RADIUS_DEC: i32 = 30; // factor of 1/30 each cycle
