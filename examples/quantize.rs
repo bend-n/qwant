@@ -1,6 +1,6 @@
-#![feature(array_chunks, slice_as_chunks)]
 extern crate qwant;
 
+use array_chunks::ExtensionTrait;
 use qwant::NeuQuant;
 use std::fs::write;
 

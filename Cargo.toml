@@ -2,11 +2,12 @@
 edition = "2021"
 name = "qwant"
 license = "MIT"
-version = "1.0.1"
+version = "1.0.3"
 authors = ["nwin <nwin@users.noreply.github.com>"]
 readme = "README.md"
 description = "Color qwantization library to reduce n colors to 256 colors."
 repository = "https://github.com/bend-n/qwant"
 
 [dependencies]
+array_chunks = "1.0.0"
 atools = "0.1.1"

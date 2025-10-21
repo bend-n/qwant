@@ -187,7 +187,7 @@ impl NeuQuant {
 
     /// Returns the RGB color map calculated from the sample.
     pub fn color_map_rgb(&self) -> impl Iterator<Item = [u8; 3]> + '_ {
-        self.colormap.iter().map(|q| q.trunc())
+        self.colormap.iter().map(|q| q.init())
     }
 
     /// Move neuron i towards biased (a,b,g,r) by factor alpha
